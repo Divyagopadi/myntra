@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Myntra — Front Page Clone (Demo)</title>
+  <style>
+    /* ---------- Reset & base ---------- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.35;color:#222}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* ---------- Top bar / Header ---------- */
+    .topbar{background:#f8f8f8;border-bottom:1px solid #eaeaea}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+
+    header.site-header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{font-weight:800;font-size:22px;color:#ff3f6c}
+
+    .search{flex:1;margin:0 20px}
+    .search input{width:100%;padding:10px 14px;border-radius:6px;border:1px solid #ddd}
+
+    .header-actions{display:flex;gap:16px;align-items:center}
+    .icon-btn{padding:6px 10px;border-radius:6px;font-size:14px;background:white;border:1px solid transparent;cursor:pointer}
+    .icon-btn:hover{box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+
+    /* ---------- Navigation categories ---------- */
+    nav.categories{background:white;padding:10px 0;border-bottom:1px solid #efefef}
+    .categories .cats{display:flex;gap:18px;flex-wrap:wrap}
+    .cat{padding:8px 10px;font-size:14px;color:#444;border-radius:4px}
+    .cat:hover{background:#f5f5f7}
+
+    /* ---------- Hero area ---------- */
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:18px;margin:20px 0}
+    .hero .carousel{background:linear-gradient(90deg,#ffecd6,#fff);border-radius:8px;padding:18px;min-height:240px;display:flex;align-items:center;justify-content:center}
+    .hero .side-cards{display:grid;gap:12px}
+    .promo-card{background:#fff;border-radius:8px;padding:14px;border:1px solid #f0f0f0;min-height:110px;display:flex;align-items:center;justify-content:center}
+
+    /* ---------- Promo strip ---------- */
+    .promo-strip{display:flex;gap:12px;margin:18px 0}
+    .promo{flex:1;background:#fff;padding:18px;border-radius:8px;border:1px solid #f0f0f0;text-align:center}
+
+    /* ---------- Product grid ---------- */
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin:18px 0}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+
+    .card{background:#fff;border:1px solid #f0f0f0;border-radius:8px;padding:12px;overflow:hidden}
+    .product-img{height:220px;background:#fafafa;border-radius:6px;display:flex;align-items:center;justify-content:center}
+    .product-title{font-size:14px;margin-top:10px;color:#333}
+    .product-price{margin-top:6px;font-weight:700;color:#111}
+    .badge{display:inline-block;background:#ff3f6c;color:white;padding:4px 8px;border-radius:999px;font-size:12px}
+
+    /* ---------- Footer ---------- */
+    footer{margin-top:36px;padding:28px 0;background:#fafafa;border-top:1px solid #eee}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 980px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .hero{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      .grid{grid-template-columns:1fr}
+      .search{margin:12px 0}
+      header.site-header{flex-wrap:wrap;gap:10px}
+      .header-actions{order:3}
+      .brand{order:1}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <header class="site-header">
+        <div class="brand">
+          <div class="logo">MYNTRA</div>
+        </div>
+
+        <div class="search">
+          <input type="text" placeholder="Search for brands, clothing, accessories..." />
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-btn">Sign in</button>
+          <button class="icon-btn">Wishlist</button>
+          <button class="icon-btn">Bag</button>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <nav class="categories">
+    <div class="container">
+      <div class="cats">
+        <a class="cat" href="#">Men</a>
+        <a class="cat" href="#">Women</a>
+        <a class="cat" href="#">Kids</a>
+        <a class="cat" href="#">Home & Living</a>
+        <a class="cat" href="#">Beauty</a>
+        <a class="cat" href="#">Top Brands</a>
+        <a class="cat" href="#">Offers</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="carousel">
+        <!-- static hero; replace with a slider script if you like -->
+        <div style="max-width:680px;text-align:left">
+          <h1 style="font-size:28px;margin-bottom:8px">Big Summer Sale — Up to 70% off</h1>
+          <p style="color:#555;margin-bottom:12px">Shop top brands in fashion, footwear, and accessories. Free delivery over ₹799.</p>
+          <div style="display:flex;gap:10px">
+            <a class="icon-btn" href="#">Shop Men</a>
+            <a class="icon-btn" href="#">Shop Women</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-cards">
+        <div class="promo-card">Flash Deals</div>
+        <div class="promo-card">New Arrivals</div>
+      </div>
+    </section>
+
+    <section class="promo-strip">
+      <div class="promo">Free Shipping over ₹799</div>
+      <div class="promo">Easy Returns</div>
+      <div class="promo">Secure Payments</div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Trending For You</h2>
+        <a href="">View all</a>
+      </div>
+
+      <div class="grid">
+        <!-- sample product cards -->
+        <article class="card">
+          <div class="product-img"><img src=https://tse2.mm.bing.net/th/id/OIP.Aal4sVGttxCWONFSiBQ5HAHaLH?rs=1&pid=ImgDetMain&o=7&rm=3" alt="product"></div>
+          <div class="product-title">Casual Cotton T-Shirt</div>
+          <div class="product-price">₹499 <span style="font-weight:400;color:#888;font-size:13px">₹999</span></div>
+        </article>
+
+        <article class="card">
+          <div class="product-img"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/680656/63/mod01/fnd/IND/fmt/png/PackLITE-Women's-Hooded-Down-Jacket" alt="product"></div>
+          <div class="product-title">Denim Jacket</div>
+          <div class="product-price">₹1,299 <span style="font-weight:400;color:#888;font-size:13px">₹2,499</span></div>
+        </article>
+
+        <article class="card">
+          <div class="product-img"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/311767/04/sv01/fnd/IND/fmt/png/Galaxis-Pro-Men's-Performance-Boost-Running-Shoes" alt="product"></div>
+          <div class="product-title">Running Shoes</div>
+          <div class="product-price">₹2,199 <span class="badge">20% off</span></div>
+        </article>
+
+        <article class="card">
+          <div class="product-img"><img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/19255323a.webp" alt="product"></div>
+          <div class="product-title">Summer Dress</div>
+          <div class="product-price">₹899 <span style="font-weight:400;color:#888;font-size:13px">₹1,799</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section style="margin-top:28px">
+      <div class="section-title">
+        <h2>Top Brands</h2>
+        <a href="https://th.bing.com/th/id/R.cf1a25c3bc26135ef7e9aa87076161b9?rik=6i21FS0hdlKuCQ&riu=http%3a%2f%2fdesignsmag.com%2fwp-content%2fuploads%2f2016%2f06%2fclothing-brands-002-Optimized-1.jpg&ehk=8YRS9ubCQ0gBXrqv3CPPYMX8sLh%2btsSBGunY39vAtyw%3d&risl=&pid=ImgRaw&r=0">Explore brands</a>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:6px">
+        <div style="flex:1;min-width:140px;background:#fff;border:1px solid #f0f0f0;border-radius:8px;padding:16px;text-align:center">PUMA</div>
+        <div style="flex:1;min-width:140px;background:#fff;border:1px solid #f0f0f0;border-radius:8px;padding:16px;text-align:center">BIBA</div>
+        <div style="flex:1;min-width:140px;background:#fff;border:1px solid #f0f0f0;border-radius:8px;padding:16px;text-align:center">SKETCHERS</div>
+        <div style="flex:1;min-width:140px;background:#fff;border:1px solid #f0f0f0;border-radius:8px;padding:16px;text-align:center">ADIDAS</div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h4>Company</h4>
+            <p style="color:#666;margin-top:8px">About us<br>Careers<br>Press</p>
+          </div>
+          <div>
+            <h4>Help</h4>
+            <p style="color:#666;margin-top:8px">Contact<br>Track Order<br>Returns</p>
+          </div>
+          <div>
+            <h4>Policy</h4>
+            <p style="color:#666;margin-top:8px">Terms<br>Privacy</p>
+          </div>
+          <div>
+            <h4>Follow</h4>
+            <p style="color:#666;margin-top:8px">Instagram<br>Facebook</p>
+          </div>
+        </div>
+
+        <p style="text-align:center;color:#999;margin-top:18px">MYNTRA DEMO BY DIVYA</p>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>
